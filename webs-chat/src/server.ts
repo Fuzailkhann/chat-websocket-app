@@ -3,7 +3,15 @@
 
 import { WebSocketServer, WebSocket } from "ws";
 
-const wss = new WebSocketServer({ port: 8000 });
+const PORT = Number(process.env.PORT) || 8000;
+
+const wss = new WebSocketServer({
+    port: PORT
+});
+
+console.log(`WebSocket server running on port ${PORT}`);
+
+// const wss = new WebSocketServer({ port: 8000 });
 
 // user structure
 interface User {
